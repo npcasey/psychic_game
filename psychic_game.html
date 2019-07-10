@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Psychic Game</title>
+</head>
+<body>
+<h1>The Psychic Game</h1>
+<p>Guess what letter I'm thinking of</p>
+
+<p>Wins:<span></span></p>
+
+<p>Losses:<span></span></p>
+
+<p>Guesses Left:<span></span></p>
+
+<p>Your Guesses left so far:<span></span></p>
+<script type="text/javascript">
+
+var letter = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var play = true;
+
+
+while (play){
+
+   var userLetter = prompt("Guess the letter I'm thinking of!");
+
+   if (!letter.includes(userLetter)){alert(('That is not a letter.'))};
+
+   var letterGen = Math.floor(Math.random()*letter.length);
+   var computerLetter = letter[letterGen];
+   var wins = 0
+   var losses = 0
+
+   function putWinsOnPage(){
+        var spanTags = document.querySelectorAll(span[0]);
+        spantags.innerText = wins;
+    }
+   function updatewins(){
+        if (computerLetter == userletter)
+            wins = wins + 1;
+            putWinsOnPage();
+        }
+    }
+
+
+
+   if (computerLetter == userLetter){alert('Congratulations! You guessed correctly!'),spanTags;
+}
+   else if (userLetter != computerLetter){alert('Good Guess but no.');
+}
+play = confirm("Try again?")
+
+}
+
+
+
+</script>
+</body>
+</html>
